@@ -4,6 +4,7 @@ import 'rc-slider/assets/index.css'
 
 import ColorBox from './ColorBox';
 import './Palette.css'
+import Navbar from './Navbar';
 
 class Palette extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Palette extends Component {
         ))
         return (
             <div className='Palette'>
-                <Slider defaultValue={level} min={100} max={900} onAfterChange={this.changeLevel} step={100} />
+                <Navbar level={level} changeLevel={this.changeLevel} />
                 <div className='Palette-colors'>
                     {colorBoxes}
                 </div>
