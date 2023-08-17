@@ -40,12 +40,20 @@ class Navbar extends Component {
                 <div className='logo'>
                     <Link to='/'>Color App</Link>
                 </div>
-                <div className='slider-container'>
-                    <span>Level: {level} </span>
-                </div>
-                <div className='slider'>
-                    <Slider defaultValue={level} min={100} max={900} onAfterChange={changeLevel} step={100} />
-                </div>
+                {this.props.showingAllColors && (
+                    <div className='slider-container'>
+                        <span>Level: {level} </span>
+                        <div className='slider'>
+                            <Slider
+                                defaultValue={level}
+                                min={100}
+                                max={900}
+                                onAfterChange={changeLevel}
+                                step={100}
+                            />
+                        </div>
+                    </div>
+                )}
                 <div className='select-container'>
                     <Select
                         onChange={this.handleFormatChange}
