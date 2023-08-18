@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+
 import MiniPalette from './MiniPalette';
 import './PaletteList.css'
 
@@ -18,6 +20,7 @@ class PaletteList extends Component {
                 <div className='container'>
                     <nav className='nav'>
                         <h1>Color App</h1>
+                        <Link to='/palette/new'>Create Palette</Link>
                     </nav>
                     <div className='palettes'>
                         {palettes.map(palette => (
